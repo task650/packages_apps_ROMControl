@@ -491,6 +491,7 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+
     <string-array name="notifications_height_values" translatable="false">
         <item>1</item>
         <item>2</item>
@@ -503,6 +504,7 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+
     <string-array name="notifications_offset_entries" translatable="false">
         <item>0%</item>
         <item>5%</item>
@@ -526,6 +528,7 @@
         <item>95%</item>
         <item>100%</item>
     </string-array>
+
     <string-array name="notifications_offset_values" translatable="false">
         <item>0</item>
         <item>0.05</item>
