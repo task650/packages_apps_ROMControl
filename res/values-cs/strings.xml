@@ -177,6 +177,8 @@
   <string name="status_bar_network_title">Síťový provoz</string>
   <string name="status_bar_show_network_stats_title">Zobrazit rychlost sítě</string>
   <string name="status_bar_show_network_stats_summary">Zobrazit rychlost sítě ve stavové liště</string>
+  <string name="status_bar_show_network_stats_hide_title">Skrýt při neaktivitě</string>
+  <string name="status_bar_show_network_stats_hide_summary">Skrýt rychlost sítě při neaktivitě</string>
   <string name="status_bar_network_stats_update_title">Rychlost aktualizace</string>
   <string name="status_bar_network_stats_update_summary">Jak často je ukazatel aktualizován</string>
   <string name="status_bar_network_stats_color_title">Barva textu rychlosti sítě</string>
@@ -391,6 +393,7 @@
   <string name="navigation_bar_width_summary">Šířka navigační lišty když je zobrazena na straně.</string>
   <string name="lockscreen_see_through">Průhledná zamčená obrazovka</string>
   <string name="lockscreen_see_through_summary">Zobrazí obsah za zamčenou obrazovkou. Data budou viditelná pro okolí!</string>
+  <string name="lockscreen_blur_radius">Rádius rozostření</string>
   <string name="battery_arc_lockscreen_handle">Kulatý indikátor baterie</string>
   <string name="battery_arc_lockscreen_handle_summary">Indikátor okolo odemykacího kruhu ukazující stav baterie</string>
   <string name="safe_headset_volume_title">Bezpečná hlasitost sluchátek</string>

@@ -15,10 +15,10 @@ import com.aokp.romcontrol.settings.SingleChoiceSetting;
 
 public class LockscreenSettingsFragment extends Fragment implements OnSettingChangedListener {
 
-    CheckboxSetting mLockscreenNotifications, mPocketMode, mShowAlways, mWakeOnNotification,
+    CheckboxSetting mLockscreenNotifications, mPocketMode, mShowAlways, mWakeOnNotification, mSeeThrough,
         mHideLowPriority, mHideNonClearable, mDismissAll, mPrivacyMode, mExpandedView, mExpandedViewForce;
     ColorPickerSetting mNotificationColor;
-    SingleChoiceSetting mOffsetTop, mNotificationHeight;
+    SingleChoiceSetting mOffsetTop, mNotificationHeight, mBlurRadius;
     boolean mHasProximitySensor;
 
     public LockscreenSettingsFragment() {
@@ -54,6 +54,9 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mExpandedView = (CheckboxSetting) v.findViewById(R.id.lockscreen_notifications_expanded_view);
         mExpandedViewForce = (CheckboxSetting) v.findViewById(R.id.lockscreen_notifications_force_expanded_view);
 
+        mSeeThrough = (CheckboxSetting) v.findViewById(R.id.lockscreen_see_through);
+        mBlurRadius = (SingleChoiceSetting) v.findViewById(R.id.lockscreen_blur_radius);
+
         return v;
     }
 
@@ -65,32 +68,51 @@ public class LockscreenSettingsFragment extends Fragment implements OnSettingCha
         mHideNonClearable.setOnSettingChangedListener(this);
         mPrivacyMode.setOnSettingChangedListener(this);
         mExpandedView.setOnSettingChangedListener(this);
+	mSeeThrough.setOnSettingChangedListener(this);
     }
 
     @Override
     public void onSettingChanged(String table, String key, String oldValue, String value) {
-        if ("aokp".equals(table)) {
+        if (key.equals("lockscreen_notifications")
+                || key.equals("lockscreen_notifications_hide_non_clearable")
+                || key.equals("lockscreen_notifications_privacy_mode")
+                || key.equals("lockscreen_notifications_expanded_view")) {
             if (mHasProximitySensor) {
-                mPocketMode.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
+                mPocketMode.setVisibility(mLockscreenNotifications.isChecked() ?
+                        View.VISIBLE : View.GONE);
                 // Display only if pocket mode is enabled
-                mShowAlways.setVisibility(mLockscreenNotifications.isChecked() ? (mPocketMode.isChecked() ? View.VISIBLE : View.GONE) : View.GONE);
+                mShowAlways.setVisibility(mLockscreenNotifications.isChecked() ?
+                        (mPocketMode.isChecked() ? View.VISIBLE : View.GONE) : View.GONE);
             } else {
                 mPocketMode.setVisibility(View.GONE);
                 mShowAlways.setVisibility(View.GONE);
             }
-            mWakeOnNotification.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
-            mHideLowPriority.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
-            mHideNonClearable.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
+            mWakeOnNotification.setVisibility(mLockscreenNotifications.isChecked() ?
+                    View.VISIBLE : View.GONE);
+            mHideLowPriority.setVisibility(mLockscreenNotifications.isChecked() ?
+                    View.VISIBLE : View.GONE);
+            mHideNonClearable.setVisibility(mLockscreenNotifications.isChecked() ?
+                    View.VISIBLE : View.GONE);
             // Display only if hide non clearable is disabled
-            mDismissAll.setVisibility(mLockscreenNotifications.isChecked() ? (mHideNonClearable.isChecked() ? View.GONE : View.VISIBLE) : View.GONE);
-            mOffsetTop.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
-            mNotificationHeight.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
-            mNotificationColor.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
-            mPrivacyMode.setVisibility(mLockscreenNotifications.isChecked() ? View.VISIBLE : View.GONE);
+            mDismissAll.setVisibility(mLockscreenNotifications.isChecked() ?
+                    (mHideNonClearable.isChecked() ? View.GONE : View.VISIBLE) : View.GONE);
+            mOffsetTop.setVisibility(mLockscreenNotifications.isChecked() ?
+                    View.VISIBLE : View.GONE);
+            mNotificationHeight.setVisibility(mLockscreenNotifications.isChecked() ?
+                    View.VISIBLE : View.GONE);
+            mNotificationColor.setVisibility(mLockscreenNotifications.isChecked() ?
+                    View.VISIBLE : View.GONE);
+            mPrivacyMode.setVisibility(mLockscreenNotifications.isChecked() ?
+                    View.VISIBLE : View.GONE);
             // Display only if privacy mode is disabled
-            mExpandedView.setVisibility(mLockscreenNotifications.isChecked() ? (mPrivacyMode.isChecked() ? View.GONE : View.VISIBLE) : View.GONE);
+            mExpandedView.setVisibility(mLockscreenNotifications.isChecked() ?
+                    (mPrivacyMode.isChecked() ? View.GONE : View.VISIBLE) : View.GONE);
             // Display only if expanded view is enabled
-            mExpandedViewForce.setVisibility(mLockscreenNotifications.isChecked() ? (mExpandedView.isChecked() ? View.VISIBLE : View.GONE) : View.GONE);
+            mExpandedViewForce.setVisibility(mLockscreenNotifications.isChecked() ?
+                    (mExpandedView.isChecked() ? View.VISIBLE : View.GONE) : View.GONE);
+        }
+	if (key.equals("lockscreen_see_through")) {
+            mBlurRadius.setVisibility(mSeeThrough.isChecked() ? View.VISIBLE : View.GONE);
         }
     }
 

@@ -52,9 +52,21 @@
         <com.aokp.romcontrol.settings.CheckboxSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_see_through"
                 android:title="@string/lockscreen_see_through"
                 android:summary="@string/lockscreen_see_through_summary"
                 android:key="lockscreen_see_through"
+                />
+
+        <com.aokp.romcontrol.settings.SingleChoiceSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lockscreen_blur_radius"
+                android:title="@string/lockscreen_blur_radius"
+                android:key="lockscreen_blur_radius"
+                android:entries="@array/lockscreen_blur_radius_entries"
+                android:entryValues="@array/lockscreen_blur_radius_values"
+                android:defaultValue="12"
                 />
 
         <com.aokp.romcontrol.settings.CheckboxSetting
@@ -139,6 +151,7 @@
                 android:title="@string/dismiss_all"
                 android:summary="@string/dismiss_all_summary"
                 android:key="lockscreen_notifications_dismiss_all"
+                android:defaultValue="true"
                 />
 
         <!-- App blacklist temporary removed -->
@@ -151,6 +164,7 @@
                 android:key="lockscreen_notifications_offset_top"
                 android:entries="@array/notifications_offset_entries"
                 android:entryValues="@array/notifications_offset_values"
+                android:defaultValue="0.3"
                 />
 
         <com.aokp.romcontrol.settings.SingleChoiceSetting
@@ -162,6 +176,7 @@
                 android:key="lockscreen_notifications_height"
                 android:entries="@array/notifications_height_entries"
                 android:entryValues="@array/notifications_height_values"
+                android:defaultValue="4"
                 />
 
         <com.aokp.romcontrol.settings.ColorPickerSetting
@@ -189,6 +204,7 @@
                 android:title="@string/expanded_view"
                 android:summary="@string/expanded_view_summary"
                 android:key="lockscreen_notifications_expanded_view"
+                android:defaultValue="true"
                 />
 
         <com.aokp.romcontrol.settings.CheckboxSetting
