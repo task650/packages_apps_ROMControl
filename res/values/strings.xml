@@ -39,6 +39,7 @@
     <string name="category_ribbons">Ribbons</string>
     <string name="category_animations">Animations</string>
     <string name="category_led">LED</string>
+    <string name="category_auto_immersive">Auto Immersive</string>
 
     <!-- Menu Items -->
     <string name="menu_show_drawer_icon">Show in app drawer</string>
@@ -465,8 +466,8 @@
     <string name="listview_bounce_interpolator">Bounce</string>
 
     <!-- CRT animation -->
-    <string name="crt_title">CRT </string>
-    <string name="system_power_crt_mode_title">CRT animation </string>
+    <string name="crt_title">CRT</string>
+    <string name="system_power_crt_mode_title">CRT animation</string>
     <string name="system_power_crt_mode_dialog_title">CRT animation</string>
     <string name="system_power_crt_mode_off">Don\'t show</string>
     <string name="system_power_crt_mode_horizontal">Collapse horizontal</string>
@@ -513,6 +514,9 @@
 
     <string name="battery_arc_lockscreen_handle">Battery arc handle</string>
     <string name="battery_arc_lockscreen_handle_summary">An arc around the lockscreen handle representing battery level</string>
+
+    <string name="lockscreen_menu_unlock_title">Menu unlock</string>
+    <string name="lockscreen_menu_unlock_summary">Use the menu key to unlock the screen</string>
 
     <string name="display_lockscreen_rotation_title">Rotate lockscreen</string>
 
@@ -600,4 +604,7 @@
     <string name="excluded_apps_title">Excluded applications</string>
     <string name="excluded_apps_summary">Excluded applications will not show up as lockscreen notifications</string>
     <string name="notification_color">Notification background color</string>
+
+    <!-- Auto Immersive Settings -->
+    <string name="add_immersive_item">Add</string>
 </resources>
