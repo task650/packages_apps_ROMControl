@@ -28,6 +28,16 @@
         android:defaultValue="false"
         />
 
+    <com.aokp.romcontrol.settings.SingleChoiceSetting
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:key="heads_up_time_out"
+        android:title="@string/heads_up_time_out_title"
+        android:entries="@array/heads_up_time_out_entries"
+        android:entryValues="@array/heads_up_time_out_values"
+        android:persistent="false" 
+        />
+
     <android.support.v13.app.FragmentTabHost
         android:id="@+id/tabhost"
         android:layout_width="match_parent"
