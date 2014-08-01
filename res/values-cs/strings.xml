@@ -114,6 +114,8 @@
   <string name="wakeup_when_plugged_unplugged_summary">Probudit zařízení při připojení/odpojení nabíječky.</string>
   <string name="ram_bar_title">Lišta s RAM</string>
   <string name="ram_bar_summary">Zobrazuje použitou RAM v přepínači běžících aplikací</string>
+  <string name="force_highend_gfx_title">Vynutit nejkvalitnější grafiku</string>
+  <string name="force_highend_gfx_summary">Povolí high-end grafické efekty jako je průhledná stavová/navigační lišta (vyžaduje restart)</string>
   <string name="title_hardware_keys_home_long_press">Domů - dlouhý stisk</string>
   <string name="title_hardware_keys_home_double_tap">Domů - dvojitý stisk</string>
   <string name="title_hardware_keys_back_long_press">Zpět - dlouhý stisk</string>
@@ -188,6 +190,8 @@
   <string name="statusbar_signal_text_title">Zobrazit signál textově</string>
   <string name="statusbar_signal_text_summary">Zobrazit signál v dBm</string>
   <string name="statusbar_hide_signal_bars_title">Skrýt ukazatel signálu</string>
+  <string name="show_4g_for_lte_title">Použít 4G ikonu u LTE</string>
+  <string name="show_4g_for_lte_summary">Zobrazit ikonu 4G sítě místo LTE ikony</string>
   <string name="statusbar_hide_signal_bars_summary">Skrýt grafický ukazatel signálu</string>
   <string name="status_bar_network_title">Síťový provoz</string>
   <string name="status_bar_show_network_stats_title">Zobrazit rychlost sítě</string>
